@@ -22,6 +22,12 @@ public class ur3subscriber : MonoBehaviour
         new() { rosName = "wrist_1_joint"       },
         new() { rosName = "wrist_2_joint"       },
         new() { rosName = "wrist_3_joint"       },
+        new() { rosName = "finger_joint"               },
+        new() { rosName = "left_inner_knuckle_joint"   },
+        new() { rosName = "left_inner_finger_joint"    },
+        new() { rosName = "right_outer_knuckle_joint"  },
+        new() { rosName = "right_inner_knuckle_joint"  },
+        new() { rosName = "right_inner_finger_joint"   },
     };
 
     public string topicName = "/joint_states";
@@ -44,6 +50,12 @@ public class ur3subscriber : MonoBehaviour
             new JointMapping { rosName = "wrist_1_joint"       },
             new JointMapping { rosName = "wrist_2_joint"       },
             new JointMapping { rosName = "wrist_3_joint"       },
+            new JointMapping { rosName = "finger_joint"               },
+            new JointMapping { rosName = "left_inner_knuckle_joint"   },
+            new JointMapping { rosName = "left_inner_finger_joint"    },
+            new JointMapping { rosName = "right_outer_knuckle_joint"  },
+            new JointMapping { rosName = "right_inner_knuckle_joint"  },
+            new JointMapping { rosName = "right_inner_finger_joint"   },
         };
     }
 
@@ -95,14 +107,21 @@ public class ur3subscriber : MonoBehaviour
         Debug.Log($"[ur3subscriber] Subscribed to {topicName} with {jointMap.Count} joints mapped.");
     }
 
+    // Maps Unity ArticulationBody names (usually the URDF child link) → ROS joint name.
     static readonly Dictionary<string, string> Ur3LinkToJoint = new()
     {
-        { "shoulder_link",  "shoulder_pan_joint"  },
-        { "upper_arm_link", "shoulder_lift_joint" },
-        { "forearm_link",   "elbow_joint"         },
-        { "wrist_1_link",   "wrist_1_joint"       },
-        { "wrist_2_link",   "wrist_2_joint"       },
-        { "wrist_3_link",   "wrist_3_joint"       },
+        { "shoulder_link",       "shoulder_pan_joint"         },
+        { "upper_arm_link",      "shoulder_lift_joint"        },
+        { "forearm_link",        "elbow_joint"                },
+        { "wrist_1_link",        "wrist_1_joint"              },
+        { "wrist_2_link",        "wrist_2_joint"              },
+        { "wrist_3_link",        "wrist_3_joint"              },
+        { "left_outer_knuckle",  "finger_joint"               },
+        { "left_inner_knuckle",  "left_inner_knuckle_joint"   },
+        { "left_inner_finger",   "left_inner_finger_joint"    },
+        { "right_outer_knuckle", "right_outer_knuckle_joint"  },
+        { "right_inner_knuckle", "right_inner_knuckle_joint"  },
+        { "right_inner_finger",  "right_inner_finger_joint"   },
     };
 
     Dictionary<string, ArticulationBody> BuildBodyIndex()

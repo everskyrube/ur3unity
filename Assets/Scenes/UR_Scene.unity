@@ -725,6 +725,30 @@ MonoBehaviour:
     body: {fileID: 0}
     offsetDeg: 0
     sign: 1
+  - rosName: finger_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
+  - rosName: left_inner_knuckle_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
+  - rosName: left_inner_finger_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
+  - rosName: right_outer_knuckle_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
+  - rosName: right_inner_knuckle_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
+  - rosName: right_inner_finger_joint
+    body: {fileID: 0}
+    offsetDeg: 0
+    sign: 1
   topicName: /joint_states
   debugLogFirstMessage: 1
   robotRoot: {fileID: 0}
@@ -833,6 +857,7 @@ GameObject:
   - component: {fileID: 94953894}
   - component: {fileID: 94953893}
   - component: {fileID: 94953895}
+  - component: {fileID: 94953896}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -950,6 +975,34 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &94953896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94953891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43941352f22553de192a900d3e0a5a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1810278819}
+  targetOffset: {x: 0, y: 0.3, z: 0}
+  distance: 1.5
+  yawDeg: 45
+  pitchDeg: 25
+  minDistance: 0.3
+  maxDistance: 10
+  minPitchDeg: -80
+  maxPitchDeg: 85
+  orbitSpeed: 250
+  panSpeed: 1.2
+  zoomSpeed: 4
+  smoothTime: 0.08
+  orbitMouseButton: 0
+  panMouseButton: 2
+  resetKey: 102
 --- !u!1 &102118575
 GameObject:
   m_ObjectHideFlags: 0
@@ -16853,6 +16906,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1060206337461996541, guid: 000ea530b614d4a25b15d64ebe0b6ad2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060206337461996541, guid: 000ea530b614d4a25b15d64ebe0b6ad2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060206337461996541, guid: 000ea530b614d4a25b15d64ebe0b6ad2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060206337461996541, guid: 000ea530b614d4a25b15d64ebe0b6ad2,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -16901,7 +16969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417413544452d4d3b9d7955bb12c9077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1994679288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16914,7 +16981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daba81ca1c4ca4f98b498d2ac664220e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mustBeReachable: 1
 --- !u!114 &1994679289
 MonoBehaviour:
   m_ObjectHideFlags: 0
